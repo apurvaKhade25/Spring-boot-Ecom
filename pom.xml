@@ -55,11 +55,11 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-<!-- starter webmvc -->
-		<!-- <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId>
-		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 <!-- data jpa -->
 		<!-- <dependency>
@@ -68,16 +68,6 @@
    			 <version>4.1.0-M1</version>
     		<scope>compile</scope>
 		</dependency> -->
-
-<!-- Mail -->
-		<!-- <dependency>
-			<groupId>javax.mail</groupId>
-    		<artifactId>javax.mail-api</artifactId>
-    		<version>1.6.2</version>
-    		<scope>compile</scope>
-		</dependency> -->
-
-
 
 <!-- Postgresql -->
 		<dependency>
@@ -97,11 +87,11 @@
 		</dependency>
 	
 <!-- h2 database -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.h2database</groupId>-->
+<!--			<artifactId>h2</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
 
 <!-- Lombok -->
 		<dependency>
@@ -133,10 +123,10 @@
 		</dependency> -->
 
 <!-- Starter security -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency> -->
+		</dependency>
 
 <!-- JWT -->
 		<dependency>
@@ -172,6 +162,9 @@
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
+					<source>21</source>
+					<target>21</target>
+					<compilerArgs>--enable-preview</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
