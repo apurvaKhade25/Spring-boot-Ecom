@@ -1,8 +1,5 @@
 package Ecommerce.Config;
 
-import Ecommerce.service.MyUserDetailsService;
-import io.jsonwebtoken.io.IOException;
-import org.hibernate.StatelessSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -61,10 +58,11 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register").permitAll()
-                        .requestMatchers("/cart/**").authenticated()
-                        .anyRequest().permitAll()
-                );
+                        .requestMatchers("/auth/login", "/auth/register").permitAll()
+                        .requestMatchers("product/**").authenticated()
+                        .anyRequest().authenticated()
+                )
+                .authenticationProvider(authenticationProvider());
         http.addFilterBefore(
                 jwtFilter,
                 UsernamePasswordAuthenticationFilter.class
