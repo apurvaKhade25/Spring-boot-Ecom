@@ -1,15 +1,12 @@
-package Ecommerce.service;
+package Ecommerce.Auth;
 
-import Ecommerce.model.User;
-import Ecommerce.model.UserPrinciple;
-import Ecommerce.repo.UserRepo;
+import Ecommerce.UserRepo.User;
+import Ecommerce.UserRepo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {

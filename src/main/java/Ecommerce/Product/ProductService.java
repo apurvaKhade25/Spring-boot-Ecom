@@ -1,16 +1,15 @@
-package Ecommerce.service;
+package Ecommerce.Product;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.io.IOException;
 
+import Ecommerce.Product.Dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.data.repository.query.Param;
 // import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import Ecommerce.model.Product;
-import Ecommerce.repo.ProductRepo;
 
 @Service
 public class ProductService {
@@ -27,7 +26,9 @@ public class ProductService {
     }
 
     public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
-
+        if(product.getReleaseDate()==null){
+            product.setReleaseDate(LocalDateTime.now());
+        }
         if (product.getProductAvailable() == null) {
             product.setProductAvailable(true); // default value
         }

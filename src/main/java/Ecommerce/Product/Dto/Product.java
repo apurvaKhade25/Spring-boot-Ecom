@@ -1,17 +1,13 @@
-package Ecommerce.model;
+package Ecommerce.Product.Dto;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 // import org.springframework.data.annotation.Id;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,7 +29,7 @@ public class Product {
     private String category;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private Date releaseDate;
+    private LocalDateTime releaseDate;
 
     private Boolean productAvailable;
     private Integer stockQuantity;
@@ -43,4 +39,9 @@ public class Product {
 
     @Lob //this field can store large binary data, storing actual image in database
     private byte[] imageDate;
+
+    @PrePersist
+    protected void onCreate(){
+        this.releaseDate=LocalDateTime.now();
+    }
 }

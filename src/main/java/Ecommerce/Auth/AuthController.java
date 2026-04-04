@@ -1,12 +1,9 @@
-package Ecommerce.controller;
+package Ecommerce.Auth;
 
 
-import Ecommerce.model.LoginRequest;
-import Ecommerce.model.User;
-import Ecommerce.service.UserService;
-import jakarta.persistence.GeneratedValue;
+import Ecommerce.Auth.Dto.LoginRequest;
+import Ecommerce.UserRepo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 

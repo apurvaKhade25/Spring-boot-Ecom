@@ -1,6 +1,4 @@
-package Ecommerce.model;
-
-import java.security.PrivateKey;
+package Ecommerce.Auth.Dto;
 
 public class LoginRequest {
     private String username;

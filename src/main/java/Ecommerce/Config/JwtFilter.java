@@ -1,7 +1,7 @@
 package Ecommerce.Config;
 
-import Ecommerce.service.JwtService;
-import Ecommerce.service.MyUserDetailsService;
+import Ecommerce.Auth.JwtService;
+import Ecommerce.Auth.MyUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;

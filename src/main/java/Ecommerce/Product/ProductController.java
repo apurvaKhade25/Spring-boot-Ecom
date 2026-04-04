@@ -1,10 +1,11 @@
-package Ecommerce.controller;
+package Ecommerce.Product;
 
 // import java.io.IOException;
 import java.util.List;
 
 // import javax.management.RuntimeErrorException;
 
+import Ecommerce.Product.Dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,9 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import Ecommerce.model.Product;
-import Ecommerce.service.ProductService;
 
 @RestController
 @CrossOrigin("*")

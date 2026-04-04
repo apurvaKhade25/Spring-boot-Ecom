@@ -1,15 +1,12 @@
-package Ecommerce.service;
+package Ecommerce.Auth;
 
-import Ecommerce.model.LoginRequest;
-import Ecommerce.model.User;
-import Ecommerce.model.UserPrinciple;
-import Ecommerce.repo.UserRepo;
-import lombok.Data;
+import Ecommerce.Auth.Dto.LoginRequest;
+import Ecommerce.UserRepo.User;
+import Ecommerce.UserRepo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,7 +40,7 @@ public class UserService {
     //login
     public String verify(LoginRequest request) {
         try {
-            Authentication authentication = authenticationManager.authenticate( //chcks username exists and password
+            Authentication authentication = authenticationManager.authenticate( //checks username exists and password
                     // check
                     new UsernamePasswordAuthenticationToken(
                             request.getUsername(),
